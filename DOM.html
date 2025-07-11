@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            height: 200px;
+            width: 200px;
+            background-color: forestgreen;
+            text-align: center;
+            line-height: 200px;
+            color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja...
+    </div>
+    <script>
+        let area = document.getElementById("area")
+        area.addEventListener("click", clicar) // Essas 3 linhas irão chamar o evento (que está dentro da respectiva função) para acontecer
+        area.addEventListener("mouseenter", entrou) // **Chamando o evento para que ocorra**
+        area.addEventListener("mouseout", saiu) // **Chamando o evento para que ocorra**
+
+        function clicar() { // O evento em sí
+            area.innerHTML = "Clicou!"
+            area.style.background = 'red'
+        }
+        function entrou() {
+            area.innerHTML = "Entrou!"
+        }
+        function saiu() {
+            area.innerHTML = "Saiu!"
+            area.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
